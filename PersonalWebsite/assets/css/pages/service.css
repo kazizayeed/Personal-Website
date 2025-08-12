@@ -1,0 +1,67 @@
+/*-----------------------------------*\
+  #service.css
+\*-----------------------------------*/
+
+.service .section-title { margin-block-end: 80px; }
+h4 {
+  font-weight: bold;
+}
+.service-list {
+  display: grid;
+  gap: 25px;
+}
+
+.service-list .card-title { margin-block-end: 10px; }
+
+h4 {
+  color: white;
+  font-weight: bold; /* Keep this line to maintain the bold style */
+}
+p {
+  color: white;
+}
+
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/**
+ * responsive for large than 768px screen
+ */
+
+@media (min-width: 768px) {
+
+  .service-list { grid-template-columns: 3, 1fr; }
+
+}
+
+
+
+
+
+/**
+ * responsive for large than 992px screen
+ */
+
+@media (min-width: 992px) {
+
+  .service-list { gap: 35px; }
+
+}
+/* Hover effect for project cards */
+.service-list .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.service-list .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+.service-list .card {
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}

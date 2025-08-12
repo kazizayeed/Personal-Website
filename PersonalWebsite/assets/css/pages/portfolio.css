@@ -1,0 +1,84 @@
+/*-----------------------------------*\
+  #portfolio.css
+\*-----------------------------------*/
+
+
+
+/*
+ * PROJECTS GRID LAYOUT
+ */
+
+/* Reduces the side padding on the main container for the projects section */
+.portfolio .container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.portfolio-list {
+  display: grid;
+  /*
+   * Increases the minimum size of each card to 500px,
+   * making the projects bigger and fitting fewer per row.
+   */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Reduces the gap between the project cards */
+}
+.portfolio .section-title {
+  margin-block-end: 80px;
+}
+
+
+.portfolio-card {
+  background-color: hsla(0, 0%, 100%, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  /* Centering the content inside the card */
+  text-align: center;
+}
+
+.portfolio-card .card-banner {
+  position: relative;
+}
+
+.portfolio-card .btn-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
+.portfolio-card .card-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-color);
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
+.portfolio-card:is(:hover, :focus-within) .card-banner::after {
+  opacity: 0.8;
+}
+
+.portfolio-card:is(:hover, :focus-within) .btn-icon {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.portfolio-card .card-content {
+  padding: 30px;
+}
+
+.portfolio-card .chip {
+  margin-block-end: 15px;
+}
+
+.portfolio-card .title-md {
+  margin-block-end: 15px;
+}
+
+.portfolio-card .card-text {
+  margin-block-end: 20px;
+}

@@ -1,0 +1,47 @@
+/*-----------------------------------*\
+  #quick-notes.css
+\*-----------------------------------*/
+
+.quick-notes {
+  padding-block-start: 120px;
+}
+
+.quick-notes .subtitle {
+  max-width: 40ch;
+  margin-inline: auto;
+  margin-block-end: 80px;
+  color: var(--color-gray);
+}
+
+.notes-list {
+  max-width: 700px;
+  margin-inline: auto;
+  display: grid;
+  gap: 40px;
+}
+
+.note-card {
+  padding-bottom: 40px;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+
+.notes-list li:last-child .note-card {
+  border-bottom: none;
+}
+
+.note-date {
+  color: var(--color-gray);
+  font-size: var(--label-md);
+  margin-block-end: 15px;
+}
+
+.note-title {
+  margin-block-end: 10px;
+}
+
+.note-body {
+  /* This monospaced font matches the aesthetic of your example */
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.7;
+  color: var(--text-color);
+}
