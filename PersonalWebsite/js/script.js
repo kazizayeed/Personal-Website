@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * GALLERY ZOOM EFFECT
      *==========================================================*/
 
-    const photoContainers = document.querySelectorAll('.photo-container');
+    const photoContainers = document.querySelectorAll('.photo-card');
     const body = document.body;
 
     photoContainers.forEach(container => {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close the zoomed image when clicking anywhere on the page outside of it
     document.addEventListener('click', (e) => {
-        const zoomedContainer = document.querySelector('.photo-container.zoomed');
+        const zoomedContainer = document.querySelector('.photo-card.zoomed');
         
         // If there's a zoomed image and the click was outside of it...
         if (zoomedContainer && !zoomedContainer.contains(e.target)) {
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close the zoomed image when pressing the Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            const zoomedContainer = document.querySelector('.photo-container.zoomed');
+            const zoomedContainer = document.querySelector('.photo-card.zoomed');
             if (zoomedContainer) {
                 zoomedContainer.classList.remove('zoomed');
                 body.classList.remove('zoomed-active');
@@ -84,3 +84,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+    

@@ -1,67 +1,215 @@
-/*-----------------------------------*\
-  #service.css
-\*-----------------------------------*/
 
-.service .section-title { margin-block-end: 80px; }
-h4 {
-  font-weight: bold;
-}
-.service-list {
-  display: grid;
-  gap: 25px;
-}
+    /* Experience Page Specific Styles */
+    .hero-experience {
+      background: linear-gradient(135deg, rgba(255, 155, 155, 0.1), rgba(123, 195, 193, 0.1));
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-block: 2rem;
+    }
 
-.service-list .card-title { margin-block-end: 10px; }
+    .experience-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
 
-h4 {
-  color: white;
-  font-weight: bold; /* Keep this line to maintain the bold style */
-}
-p {
-  color: white;
-}
+    .experience-showcase {
+      background: var(--color-white);
+    }
 
+    .experience-grid {
+      display: grid;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
 
+    .experience-card {
+      background: var(--bg-color);
+      border: 3px solid var(--color-border);
+      padding: 2rem;
+      transition: var(--transition-1);
+      position: relative;
+      overflow: hidden;
+    }
 
-/*-----------------------------------*\
-  #MEDIA QUERIES
-\*-----------------------------------*/
+    .experience-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+    }
 
-/**
- * responsive for large than 768px screen
- */
+    .student-council::before { background: linear-gradient(90deg, #FF9B9B, #7BC3C1); }
+    .deca::before { background: linear-gradient(90deg, #D4B5D4, #E8C547); }
+    .workshop::before { background: linear-gradient(90deg, #E8C547, #FF9B9B); }
+    .think-tank::before { background: linear-gradient(90deg, #7BC3C1, #D4B5D4); }
+    .mun::before { background: linear-gradient(90deg, #FF9B9B, #E8C547); }
+    .liaison::before { background: linear-gradient(90deg, #D4B5D4, #7BC3C1); }
 
-@media (min-width: 768px) {
+    .experience-card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 8px 8px 0px rgba(123, 195, 193, 0.3), 12px 12px 0px rgba(255, 155, 155, 0.2);
+    }
 
-  .service-list { grid-template-columns: 3, 1fr; }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
 
-}
+    .card-icon {
+      font-size: 2.5rem;
+      padding: 0.5rem;
+      background: rgba(255, 155, 155, 0.1);
+      border: 2px solid rgba(255, 155, 155, 0.3);
+    }
 
+    .card-meta {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      gap: 0.3rem;
+    }
 
+    .card-duration {
+      font-family: var(--ff-secondary);
+      font-size: 1rem;
+      color: var(--color-primary);
+      font-weight: bold;
+    }
 
+    .card-type {
+      font-size: 0.8rem;
+      color: var(--color-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--heading-color);
+    }
 
-/**
- * responsive for large than 992px screen
- */
+    .card-organization {
+      font-size: 1rem;
+      color: var(--color-secondary);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
 
-@media (min-width: 992px) {
+    .card-description {
+      color: var(--text-color);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
 
-  .service-list { gap: 35px; }
+    .card-achievements {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
 
-}
-/* Hover effect for project cards */
-.service-list .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
+    .achievement-tag {
+      background: rgba(123, 195, 193, 0.15);
+      color: var(--color-secondary);
+      padding: 0.4rem 0.8rem;
+      font-size: 0.75rem;
+      font-family: var(--ff-secondary);
+      border: 1px solid rgba(123, 195, 193, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-.service-list .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  z-index: 1;
-}
-.service-list .card {
-  border-radius: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
+    /* Mobile Responsive */
+    @media (max-width: 767px) {
+      .card-header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .card-meta {
+        text-align: left;
+      }
+      
+      .card-icon {
+        font-size: 2rem;
+      }
+      
+      .experience-stats {
+        gap: 2rem;
+      }
+    }
+
+    /* Tablet and Desktop */
+    @media (min-width: 768px) {
+      .experience-grid {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2.5rem;
+      }
+      
+      .experience-stats {
+        gap: 4rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Mobile Navigation */
+    @media (max-width: 767px) {
+      .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        border: 3px solid var(--color-secondary);
+        border-top: none;
+        flex-direction: column;
+        padding: 2rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-1);
+      }
+      
+      .navbar.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .navbar a {
+        font-family: var(--ff-secondary);
+        font-size: 1.2rem;
+        color: var(--text-color);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: var(--transition-1);
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(123, 195, 193, 0.2);
+      }
+      
+      .navbar a:last-child {
+        border-bottom: none;
+      }
+      
+      .navbar a:hover,
+      .navbar a.active {
+        color: var(--color-primary);
+      }
+    }
