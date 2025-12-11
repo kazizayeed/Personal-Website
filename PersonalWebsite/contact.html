@@ -1,245 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Zayeed - Contact | Creative Student & Technology Leader</title>
-  <meta name="title" content="Zayeed - Contact | Creative Student & Technology Leader">
-  <meta name="description" content="Get in touch with Zayeed – student and creative leader based in Canada. Let's connect and collaborate on exciting projects.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/pages/contact.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Kazi Zayeed</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/pages/contact.css">
 </head>
-
 <body>
-  <header class="header">
     <div class="container">
-      <a href="./index.html" class="logo">Zayeed</a>
-      
-      <nav class="navbar">
-        <a href="./index.html">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./projects.html">Projects</a>
-        <a href="./experience.html">Experience</a>
-        <a href="./contact.html" class="active">Contact</a>
-      </nav>
-      
-      <button class="nav-toggle">☰</button>
+        <nav>
+            <div class="logo">kazi zayeed</div>
+            <div class="nav-links">
+                <a href="index.html" class="active">home</a>
+                <a href="experience.html">projects</a>
+                <a href="about.html">philosophy</a>
+                <a href="contact.html">contact</a>
+            </div>
+        </nav>
+
+        <section class="contact-hero">
+            <h1>let's talk</h1>
+            <p class="hero-text">interested in collaboration, mentorship, or just want to connect? i'm always open to meaningful conversations.</p>
+        </section>
+
+        <section class="contact-methods">
+            <div class="method-card primary">
+                <div class="method-header">
+                    <div class="method-icon email">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p class="method-note">Best for detailed inquiries</p>
+                    </div>
+                </div>
+                <a href="mailto:your.email@example.com" class="contact-link">your.email@example.com</a>
+            </div>
+
+            <div class="method-card primary">
+                <div class="method-header">
+                    <div class="method-icon linkedin">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <p class="method-note">Professional networking</p>
+                    </div>
+                </div>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">linkedin.com/in/yourprofile</a>
+            </div>
+        </section>
+
+        <section class="social-grid">
+            <h2 class="section-title">find me online</h2>
+            <div class="social-cards">
+                <a href="https://twitter.com/yourhandle" target="_blank" class="social-card twitter">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    <span>X / Twitter</span>
+                </a>
+
+                <a href="https://instagram.com/yourhandle" target="_blank" class="social-card instagram">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+
+                <a href="https://github.com/yourusername" target="_blank" class="social-card github">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="organizations-section">
+            <h2 class="section-title">my organizations</h2>
+            <div class="org-cards">
+                <div class="org-card">
+                    <h3>The High School Capitalist</h3>
+                    <p>Non-profit teaching finance, economics, and politics</p>
+                    <a href="mailto:contact@highschoolcapitalist.org">contact@highschoolcapitalist.org</a>
+                </div>
+                <div class="org-card">
+                    <h3>Bengali Youth Student Society</h3>
+                    <p>International platform for Bangladeshi cultural education</p>
+                    <a href="mailto:info@byss.org">info@byss.org</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="availability-section">
+            <div class="availability-content">
+                <h2>currently open to</h2>
+                <ul class="availability-list">
+                    <li>collaboration opportunities</li>
+                    <li>speaking engagements & workshops</li>
+                    <li>mentorship conversations</li>
+                    <li>project partnerships</li>
+                </ul>
+                <p class="response-note">📬 typically respond within 24-48 hours</p>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <h2>let's connect</h2>
+            <p>always happy to chat about projects or ideas</p>
+            <div class="social">
+                <a href="#" onclick="navigator.clipboard.writeText('kazi.zayeed@gmail.com'); alert('Email copied to clipboard!'); return false;" title="Email">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/kazi-zayeed/" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="https://www.linkedin.com/in/kazi-zayeed/">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                </a>
+                <a href="https://x.com/KaziZayeed" title="X (Twitter)">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/lezayeed/?next=%2F" title="Instagram">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/kazizayeed" title="GitHub">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                    </svg>
+                </a>
+            </div>
+        </footer>
     </div>
-  </header>
-
-  <main>
-    <section class="section hero-contact">
-      <div class="container">
-        <div class="hero-content text-center">
-          <p class="hero-subtitle">Let's Connect</p>
-          <h1 class="headline-lg">Get In Touch</h1>
-          <p class="hero-description" style="max-width: 700px; margin: 0 auto;">
-            Whether you have a project idea, collaboration opportunity, or just want to say hello – 
-            I'm always excited to connect with fellow creators, leaders, and innovators.
-          </p>
-          
-          <div class="contact-stats">
-            <div class="stat-item">
-              <span class="stat-number">24h</span>
-              <p class="stat-label">Response Time</p>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">100%</span>
-              <p class="stat-label">Reply Rate</p>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">🇨🇦</span>
-              <p class="stat-label">Based in Canada</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact-main" id="contact-form">
-      <div class="container">
-        <div class="contact-grid">
-          <!-- Contact Form -->
-          <div class="contact-form-section">
-            <div class="form-header">
-              <h2 class="headline-md">Send a Message</h2>
-              <p>Fill out the form below and I'll get back to you as soon as possible!</p>
-            </div>
-            
-            <form action="https://formspree.io/f/manbdnyg" method="POST" class="contact-form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name" class="form-label">First Name</label>
-                  <input type="text" name="name" id="name" placeholder="Your first name *" required class="form-input">
-                </div>
-                <div class="form-group">
-                  <label for="email" class="form-label">Email Address</label>
-                  <input type="email" name="email" id="email" placeholder="your.email@example.com *" required class="form-input">
-                </div>
-              </div>
-              
-              <div class="form-group">
-                <label for="subject" class="form-label">Subject</label>
-                <input type="text" name="subject" id="subject" placeholder="What's this about? *" required class="form-input">
-              </div>
-              
-              <div class="form-group">
-                <label for="message" class="form-label">Your Message</label>
-                <textarea name="message" id="message" placeholder="Tell me about your project, idea, or just say hello... *" required class="form-textarea" rows="5"></textarea>
-              </div>
-              
-              <button type="submit" class="btn btn-primary form-submit">
-                <span>Send Message</span>
-                <span class="btn-icon">📧</span>
-              </button>
-            </form>
-          </div>
-
-          <!-- Contact Information -->
-          <div class="contact-info-section">
-            <div class="info-header">
-              <h3 class="title-lg">Other Ways to Connect</h3>
-              <p>Prefer a different method? Here are more ways to reach out:</p>
-            </div>
-            
-            <div class="contact-methods">
-              <div class="contact-method phone-method">
-                <div class="method-icon">📞</div>
-                <div class="method-content">
-                  <h4 class="method-title">Phone</h4>
-                  <a href="tel:437-256-3131" class="method-link">437-256-3131</a>
-                  <p class="method-note">Available Mon-Fri, 9AM-6PM EST</p>
-                </div>
-              </div>
-
-              <div class="contact-method email-method">
-                <div class="method-icon">📧</div>
-                <div class="method-content">
-                  <h4 class="method-title">Email</h4>
-                  <a href="mailto:kazi.zayeed@gmail.com" class="method-link">kazi.zayeed@gmail.com</a>
-                  <p class="method-note">For detailed inquiries and proposals</p>
-                </div>
-              </div>
-
-            
-
-            <div class="social-connect">
-              <h4 class="social-title">Follow My Journey</h4>
-              <div class="social-grid">
-                <a href="https://www.linkedin.com/in/kazi-zayeed/" class="social-card linkedin">
-                  <div class="social-icon">💼</div>
-                  <span class="social-name">LinkedIn</span>
-                  <p class="social-desc">Professional updates</p>
-                </a>
-                <a href="https://github.com/kazizayeed" class="social-card github">
-                  <div class="social-icon">⚡</div>
-                  <span class="social-name">GitHub</span>
-                  <p class="social-desc">Code & projects</p>
-                </a>
-                <a href="https://x.com/KaziZayeed" class="social-card twitter">
-                  <div class="social-icon">🐦</div>
-                  <span class="social-name">Twitter</span>
-                  <p class="social-desc">Thoughts & ideas</p>
-                </a>
-                <a href="https://www.instagram.com/lezayeed/" class="social-card instagram">
-                  <div class="social-icon">📷</div>
-                  <span class="social-name">Instagram</span>
-                  <p class="social-desc">Behind the scenes</p>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section collaboration-cta">
-      <div class="container">
-        <div class="cta-content text-center">
-          <h2 class="headline-md">Ready to Collaborate?</h2>
-          <p>I'm always looking for exciting opportunities to work with passionate people on meaningful projects.</p>
-          <div class="cta-options">
-            <div class="cta-option">
-              <div class="cta-icon">🚀</div>
-              <h3>Project Collaboration</h3>
-              <p>Have an idea? Let's bring it to life together.</p>
-            </div>
-            <div class="cta-option">
-              <div class="cta-icon">🎯</div>
-              <h3>Speaking & Events</h3>
-              <p>Looking for a speaker on leadership or tech?</p>
-            </div>
-            <div class="cta-option">
-              <div class="cta-icon">💡</div>
-              <h3>Mentoring & Advice</h3>
-              <p>Want to chat about student leadership or development?</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/kazi-zayeed-46521b301/" class="social-link">📧</a>
-        <a href="https://github.com/kazizayeed" class="social-link">💼</a>
-        <a href="https://x.com/KaziZayeed" class="social-link">🐦</a>
-        <a href="https://www.instagram.com/lezayeed/" class="social-link">📷</a>
-      </div>
-      <p class="footer-text">&copy; 2025 Kazi Zayeed — Crafting Digital Excellence</p>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile navigation toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navbar = document.querySelector('.navbar');
-
-    if (navToggle && navbar) {
-      navToggle.addEventListener('click', () => {
-        navbar.classList.toggle('active');
-      });
-    }
-
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.navbar a').forEach(link => {
-      link.addEventListener('click', () => {
-        navbar.classList.remove('active');
-      });
-    });
-
-    // Form submission feedback
-    const form = document.querySelector('.contact-form');
-    const submitBtn = document.querySelector('.form-submit');
-
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        submitBtn.innerHTML = '<span>Sending...</span><span class="btn-icon">⏳</span>';
-        submitBtn.disabled = true;
-        
-        // Reset button after 3 seconds (in case of error)
-        setTimeout(() => {
-          submitBtn.innerHTML = '<span>Send Message</span><span class="btn-icon">📧</span>';
-          submitBtn.disabled = false;
-        }, 3000);
-      });
-    }
-
-    // Smooth scroll for announcement bar link
-    document.querySelector('.announcement-bar a').addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector('#contact-form').scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  </script>
 </body>
 </html>

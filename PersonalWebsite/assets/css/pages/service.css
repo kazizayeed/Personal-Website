@@ -1,215 +1,176 @@
+/* Projects Page Specific Styles */
 
-    /* Experience Page Specific Styles */
-    .hero-experience {
-      background: linear-gradient(135deg, rgba(255, 155, 155, 0.1), rgba(123, 195, 193, 0.1));
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-block: 2rem;
+.page-header {
+    text-align: center;
+    margin: 4rem 0 6rem;
+}
+
+.page-header h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.projects-section {
+    margin-bottom: 8rem;
+}
+
+.section-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #4e7391;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+}
+
+.project-detail {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 2.5rem;
+    border-left: 4px solid #4e7391;
+    transition: all 0.3s ease;
+}
+
+.project-detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(78, 115, 145, 0.15);
+}
+
+.project-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.year {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4e7391;
+}
+
+.role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6b9080;
+}
+
+.project-detail h3 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #4e7391;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.project-detail p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(78, 115, 145, 0.05);
+    border-radius: 12px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4e7391;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card-small {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    border-radius: 16px;
+    border-left: 4px solid #6b9080;
+    transition: all 0.3s ease;
+}
+
+.project-card-small:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(107, 144, 128, 0.15);
+}
+
+.project-card-small h3 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.project-card-small p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.logo a {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.nav-links .active {
+    color: #6b9080;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2.5rem;
     }
 
-    .experience-stats {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin: 2rem 0;
-      flex-wrap: wrap;
+    .project-detail h3 {
+        font-size: 1.8rem;
     }
 
-    .experience-showcase {
-      background: var(--color-white);
+    .project-grid {
+        grid-template-columns: 1fr;
     }
 
-    .experience-grid {
-      display: grid;
-      gap: 3rem;
-      margin-top: 3rem;
+    .impact-stats {
+        grid-template-columns: 1fr;
     }
-
-    .experience-card {
-      background: var(--bg-color);
-      border: 3px solid var(--color-border);
-      padding: 2rem;
-      transition: var(--transition-1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .experience-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-    }
-
-    .student-council::before { background: linear-gradient(90deg, #FF9B9B, #7BC3C1); }
-    .deca::before { background: linear-gradient(90deg, #D4B5D4, #E8C547); }
-    .workshop::before { background: linear-gradient(90deg, #E8C547, #FF9B9B); }
-    .think-tank::before { background: linear-gradient(90deg, #7BC3C1, #D4B5D4); }
-    .mun::before { background: linear-gradient(90deg, #FF9B9B, #E8C547); }
-    .liaison::before { background: linear-gradient(90deg, #D4B5D4, #7BC3C1); }
-
-    .experience-card:hover {
-      transform: translate(-4px, -4px);
-      box-shadow: 8px 8px 0px rgba(123, 195, 193, 0.3), 12px 12px 0px rgba(255, 155, 155, 0.2);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1.5rem;
-    }
-
-    .card-icon {
-      font-size: 2.5rem;
-      padding: 0.5rem;
-      background: rgba(255, 155, 155, 0.1);
-      border: 2px solid rgba(255, 155, 155, 0.3);
-    }
-
-    .card-meta {
-      display: flex;
-      flex-direction: column;
-      text-align: right;
-      gap: 0.3rem;
-    }
-
-    .card-duration {
-      font-family: var(--ff-secondary);
-      font-size: 1rem;
-      color: var(--color-primary);
-      font-weight: bold;
-    }
-
-    .card-type {
-      font-size: 0.8rem;
-      color: var(--color-gray);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .card-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--heading-color);
-    }
-
-    .card-organization {
-      font-size: 1rem;
-      color: var(--color-secondary);
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    .card-description {
-      color: var(--text-color);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-    }
-
-    .card-achievements {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .achievement-tag {
-      background: rgba(123, 195, 193, 0.15);
-      color: var(--color-secondary);
-      padding: 0.4rem 0.8rem;
-      font-size: 0.75rem;
-      font-family: var(--ff-secondary);
-      border: 1px solid rgba(123, 195, 193, 0.3);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 767px) {
-      .card-header {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
-      .card-meta {
-        text-align: left;
-      }
-      
-      .card-icon {
-        font-size: 2rem;
-      }
-      
-      .experience-stats {
-        gap: 2rem;
-      }
-    }
-
-    /* Tablet and Desktop */
-    @media (min-width: 768px) {
-      .experience-grid {
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 2.5rem;
-      }
-      
-      .experience-stats {
-        gap: 4rem;
-      }
-    }
-
-    @media (min-width: 992px) {
-      .experience-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* Mobile Navigation */
-    @media (max-width: 767px) {
-      .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--bg-color);
-        border: 3px solid var(--color-secondary);
-        border-top: none;
-        flex-direction: column;
-        padding: 2rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all var(--transition-1);
-      }
-      
-      .navbar.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-      
-      .navbar a {
-        font-family: var(--ff-secondary);
-        font-size: 1.2rem;
-        color: var(--text-color);
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: var(--transition-1);
-        padding: 0.5rem 0;
-        border-bottom: 1px solid rgba(123, 195, 193, 0.2);
-      }
-      
-      .navbar a:last-child {
-        border-bottom: none;
-      }
-      
-      .navbar a:hover,
-      .navbar a.active {
-        color: var(--color-primary);
-      }
-    }
+}
