@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kazi Zayeed on curiosity, first-principles thinking, learning from failure, and trying again.">
+    <title>My Philosophy | Kazi Zayeed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+
+/* ==========================================================
+   Shared design system — matches the new home page
+   Palette: cream, brown, sage, peach, rust
+   ========================================================== */
+
+:root {
+    --sage: #9caf88;
+    --brown: #3b2a20;
+    --peach: #f2b48c;
+    --rust: #b5472a;
+    --paper: #f5eedf;
+    --paper-deep: #ece3cf;
+    --card: #fffdf8;
+    --ink: #3b2a20;
+    --muted: #7a6a5c;
+    --line: #cfc2a6;
+
+    --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+
+    /* Legacy aliases for portfolio.css */
+    --color-white: var(--card);
+    --color-border: var(--ink);
+    --color-primary: var(--rust);
+    --color-secondary: var(--brown);
+    --color-tertiary: var(--peach);
+    --color-quaternary: var(--sage);
+    --color-gray: var(--muted);
+    --text-color: var(--ink);
+    --heading-color: var(--ink);
+    --bg-color: var(--paper);
+    --ff-primary: var(--sans);
+    --ff-secondary: var(--mono);
+    --transition-1: 0.2s ease;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+img { max-width: 100%; }
+:focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.section { padding-block: clamp(3rem, 7vw, 5.5rem); }
+.text-center { text-align: center; }
+
+/* ---------- Navigation (about, contact, experience pages) ---------- */
+nav:not(.navbar) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2.25rem 0 1.25rem;
+    margin-bottom: 4rem;
+    border-bottom: 4px solid var(--ink);
+}
+
+.brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+.seal {
+    width: 64px; height: 64px;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-weight: 800; font-size: 0.95rem; letter-spacing: 0.04em;
+    box-shadow: inset 0 0 0 4px var(--paper), inset 0 0 0 5px var(--ink);
+}
+.brand-name { font-weight: 800; font-size: clamp(1.4rem, 3vw, 2.1rem); letter-spacing: -0.03em; line-height: 1; text-transform: uppercase; }
+.brand-sub { display: block; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; margin-top: 0.35rem; font-weight: 400; text-transform: uppercase; }
+
+.nav-links { display: flex; gap: clamp(1rem, 3vw, 2.25rem); flex-wrap: wrap; }
+
+.nav-links a,
+.navbar a {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--ink);
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transition-1);
+}
+
+.nav-links a:hover, .nav-links a.active,
+.navbar a:hover, .navbar a.active { border-bottom-color: var(--rust); }
+
+/* ---------- Header (projects page) ---------- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 4px solid var(--ink);
+}
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-block: 1.25rem;
+}
+.navbar { display: flex; gap: clamp(1rem, 3vw, 2.25rem); }
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 2px solid var(--ink);
+    color: var(--ink);
+    font-size: 1.3rem;
+    line-height: 1;
+    padding: 0.35rem 0.65rem;
+    cursor: pointer;
+}
+
+/* ---------- Type helpers ---------- */
+.headline-lg, .headline-md {
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+    color: var(--ink);
+}
+.headline-lg { font-size: clamp(2.6rem, 7vw, 5.6rem); }
+.headline-md { font-size: clamp(2rem, 4.5vw, 3.4rem); }
+.hero-subtitle { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--rust); margin-bottom: 1rem; }
+.hero-description { font-size: 1.15rem; line-height: 1.7; margin-top: 1.5rem; }
+
+.stat-item { text-align: center; }
+.stat-number { display: block; font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--rust); }
+.stat-label { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em; color: var(--muted); margin-top: 0.5rem; }
+
+/* ---------- Buttons ---------- */
+.btn-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+.btn {
+    display: inline-block;
+    padding: 0.85rem 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--brown);
+    transition: background var(--transition-1), color var(--transition-1), border-color var(--transition-1);
+}
+.btn-primary { background: var(--brown); color: var(--paper); }
+.btn-primary:hover { background: var(--rust); border-color: var(--rust); }
+.btn-secondary { background: transparent; color: var(--brown); }
+.btn-secondary:hover { background: var(--brown); color: var(--paper); }
+
+/* ---------- Footer ---------- */
+footer {
+    margin-top: 7rem;
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
+    background: var(--brown);
+    color: var(--peach);
+    text-align: left;
+    /* extends the brown band to the full width of the screen */
+    box-shadow: 0 0 0 100vmax var(--brown);
+    clip-path: inset(0 -100vmax);
+}
+footer h2 {
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: var(--peach);
+    margin-bottom: 0.75rem;
+}
+footer p { color: #e8dcc6; max-width: 40ch; margin-bottom: 0; }
+
+.social { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+.social a {
+    width: 52px; height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid var(--peach);
+    border-radius: 50%;
+    transition: background var(--transition-1), border-color var(--transition-1);
+}
+.social svg { width: 22px; height: 22px; fill: var(--peach); transition: fill var(--transition-1); }
+.social a:hover { background: var(--rust); border-color: var(--rust); }
+.social a:hover svg { fill: var(--paper); }
+
+/* projects page footer */
+.footer { margin-top: 0; }
+.footer .container { display: flex; flex-direction: column; gap: 1.25rem; }
+.social-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+.social-link {
+    width: 48px; height: 48px;
+    display: grid; place-items: center;
+    border: 2px solid var(--peach);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background var(--transition-1), border-color var(--transition-1);
+}
+.social-link:hover { background: var(--rust); border-color: var(--rust); }
+.footer-text { font-family: var(--mono); font-size: 0.75rem; color: #c9b9a3; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767px) {
+    .nav-toggle { display: block; }
+    footer { margin-top: 5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; animation: none !important; }
+}
+
+/* ---------- page styles ---------- */
+/* Philosophy page */
+
+.philosophy-hero { margin: 0 0 4.5rem; }
+
+.philosophy-hero h1 {
+    font-size: clamp(2.8rem, 8vw, 6.5rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 0.95;
+    margin-bottom: 1.25rem;
+}
+
+.philosophy-hero .subtitle {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    color: var(--rust);
+}
+
+.philosophy-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    margin-bottom: 6rem;
+    align-items: start;
+}
+
+.philosophy-text { border-top: 4px solid var(--ink); padding-top: 2rem; }
+
+.philosophy-text .opening {
+    font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 2rem;
+}
+
+.philosophy-text p {
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: var(--ink);
+    max-width: 62ch;
+    margin-bottom: 1.6rem;
+}
+
+.philosophy-highlights { display: flex; flex-direction: column; border-top: 4px solid var(--ink); }
+
+.highlight-card { padding: 1.75rem 0; border-bottom: 1px solid var(--line); }
+.highlight-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+.highlight-card h3 { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+.highlight-card p { font-size: 1rem; color: var(--muted); line-height: 1.6; }
+
+.philosophy-quote {
+    background: var(--brown);
+    color: var(--peach);
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+    margin-bottom: 6rem;
+}
+
+.philosophy-quote blockquote {
+    font-size: clamp(1.6rem, 3.6vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 968px) {
+    .philosophy-content { grid-template-columns: 1fr; }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a class="brand" href="index.html">
+                <span class="seal" aria-hidden="true">K.Z</span>
+                <span>
+                    <span class="brand-name">Kazi Zayeed</span>
+                    <span class="brand-sub">Waterloo Honours Mathematics &amp; FARM</span>
+                </span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">01 Home</a>
+                <a href="experience.html">02 Experience</a>
+                <a href="about.html" class="active" aria-current="page">03 Philosophy</a>
+                <a href="contact.html">04 Contact</a>
+            </div>
+        </nav>
+
+        <section class="philosophy-hero">
+            <h1>My philosophy</h1>
+            <p class="subtitle">ask why, fail, learn, try again</p>
+        </section>
+
+        <section class="philosophy-content">
+            <div class="philosophy-text">
+                <p class="opening">My first question is usually “why?” The first answer is rarely the whole answer, so I keep digging: what makes this work, and what are we assuming?</p>
+
+                <p>Sometimes I find an answer. Sometimes I find a new question. Sometimes I get it wrong. I’m pretty good at that last one, but getting it wrong gives me something useful to work with.</p>
+
+                <p>From there, I build the idea back up and try again. That attempt can fail too. Annoying, but now I have better information.</p>
+
+                <p>This is the framework I try to use across my life: try, fail, ask why, return to first principles, try again. Repeat. I’m pretty practiced at the failing part; thankfully, it isn’t the last step.</p>
+
+                <p>I don’t expect every attempt to work. I do want to leave each one with a better question, a clearer idea, or fewer assumptions than I started with.</p>
+            </div>
+
+            <div class="philosophy-highlights">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🎯</div>
+                    <h3>try</h3>
+                    <p>You don’t need a perfect plan to make a useful first attempt.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">🤝</div>
+                    <h3>fail</h3>
+                    <p>When something breaks, I have new information to work with.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">📈</div>
+                    <h3>ask why</h3>
+                    <p>Look for the cause and question the assumptions, not just the outcome.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">🌍</div>
+                    <h3>first principles</h3>
+                    <p>Strip it back to what’s true, build an answer, and try again.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="philosophy-quote">
+            <blockquote>
+                Try. Fail. Ask why. Return to first principles. Try again.
+            </blockquote>
+        </section>
+
+        <footer id="contact">
+            <h2>let's connect</h2>
+            <p>always happy to chat about projects or ideas</p>
+            <div class="social">
+                <a href="mailto:kzayeed@uwaterloo.ca" title="Email">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/kazi-zayeed" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                </a>
+                <a href="https://x.com/KaziZayeed" title="X (Twitter)">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/lezayeed/?next=%2F" title="Instagram">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/kazizayeed" title="GitHub">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

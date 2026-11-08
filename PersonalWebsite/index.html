@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazi Zayeed | Mathematics, Finance &amp; Projects</title>
+    <meta name="description" content="Kazi Zayeed is a University of Waterloo Honours Mathematics and Financial Analysis and Risk Management (FARM) Co-op student exploring quantitative finance, consulting, software projects, and community leadership.">
+    <meta property="og:title" content="Kazi Zayeed | Mathematics, Finance &amp; Projects">
+    <meta property="og:description" content="University of Waterloo Honours Mathematics and FARM student exploring quantitative finance, consulting, software projects, and community leadership.">
+    <meta property="og:type" content="website">
+
+    <script>
+        // Lock scrolling while the intro plays (skipped for reduced motion)
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.classList.add('locked');
+            window.addEventListener('load', function () {
+                setTimeout(function () {
+                    document.documentElement.classList.remove('locked');
+                    document.documentElement.classList.add('ready');
+                }, 2300);
+            });
+        } else {
+            document.documentElement.classList.add('ready');
+        }
+    </script>
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --sage: #9caf88;
+            --brown: #3b2a20;
+            --peach: #f2b48c;
+            --rust: #b5472a;
+            --paper: #f5eedf;
+            --ink: #3b2a20;
+            --muted: #7a6a5c;
+            --mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+            --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        html.locked { overflow: hidden; }
+        body { background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+        a { color: inherit; }
+        :focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
+
+        /* ---------- INTRO ---------- */
+        .intro {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100svh;
+            background: var(--sage);
+            color: var(--brown);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .intro-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.75rem clamp(1.25rem, 4vw, 3rem);
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            letter-spacing: 0.18em;
+            opacity: 0;
+            animation: fade 0.8s ease 1.6s forwards;
+        }
+        .intro-stage {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: clamp(1.5rem, 5vw, 4rem);
+            padding: 0 clamp(1.25rem, 5vw, 4rem) 4.5rem;
+            text-align: left;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .intro-stage.no-photos { grid-template-columns: 1fr; text-align: center; }
+        .intro-stage.no-photos .wordmark { align-items: center; }
+        .intro-stage.no-photos .wordmark { font-size: clamp(3.4rem, 13vw, 11rem); }
+        .wordmark {
+            font-family: var(--sans);
+            font-weight: 800;
+            font-size: clamp(3.6rem, 11vw, 10rem);
+            line-height: 0.95;
+            letter-spacing: -0.055em;
+            color: var(--brown);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .word { display: inline-flex; }
+        .letter {
+            display: inline-block;
+            transform: translateY(-130vh);
+            animation: drop 0.95s cubic-bezier(0.34, 1.35, 0.5, 1) forwards;
+            animation-delay: calc(0.25s + var(--i) * 0.07s);
+        }
+        .tagline {
+            margin-top: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 800;
+            font-size: clamp(0.7rem, 1.6vw, 1.1rem);
+            letter-spacing: 0.42em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fade 0.8s ease 1.7s forwards;
+        }
+        .scroll-cue {
+            position: absolute;
+            left: 50%;
+            bottom: 4.2rem;
+            transform: translateX(-50%);
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            opacity: 0;
+            animation: fade 0.8s ease 2.1s forwards;
+        }
+        .scroll-cue::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 28px;
+            margin: 0.5rem auto 0;
+            background: var(--brown);
+            animation: nudge 1.6s ease-in-out 2.5s infinite;
+        }
+        .ticker {
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            background: var(--brown);
+            color: var(--peach);
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 0.85rem 0;
+        }
+        .ticker-track { display: inline-block; animation: marquee 38s linear infinite; }
+        .ticker-track span { padding-right: 3rem; }
+
+        /* ---------- MAIN ---------- */
+        .page { padding: 0 clamp(1.25rem, 4vw, 3rem); }
+        .frame { max-width: 1280px; margin: 0 auto; position: relative; }
+
+        header.masthead {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding: 2.25rem 0 1.25rem;
+            border-bottom: 4px solid var(--ink);
+        }
+        .brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+        .seal {
+            width: 64px; height: 64px;
+            border: 3px solid var(--ink);
+            border-radius: 50%;
+            display: grid; place-items: center;
+            font-weight: 800; font-size: 0.95rem; letter-spacing: 0.04em;
+            box-shadow: inset 0 0 0 4px var(--paper), inset 0 0 0 5px var(--ink);
+        }
+        .brand-name { font-weight: 800; font-size: clamp(1.4rem, 3vw, 2.1rem); letter-spacing: -0.03em; line-height: 1; text-transform: uppercase; }
+        .brand-sub { display: block; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; margin-top: 0.35rem; font-weight: 400; text-transform: uppercase; }
+        nav ul { list-style: none; display: flex; gap: clamp(1rem, 3vw, 2.25rem); flex-wrap: wrap; }
+        nav a { font-family: var(--mono); font-size: 0.82rem; text-decoration: none; letter-spacing: 0.04em; padding-bottom: 2px; border-bottom: 2px solid transparent; }
+        nav a:hover, nav a[aria-current] { border-bottom-color: var(--rust); }
+
+        .status-line {
+            margin-top: 2.25rem;
+            padding: 0.7rem 0;
+            border-top: 1px solid #d9cdb4;
+            border-bottom: 1px solid #d9cdb4;
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: var(--mono);
+            font-size: 0.74rem;
+            color: #3b2a20;
+        }
+        .status-line .ticker-track { animation-duration: 55s; }
+
+        .hero-figure {
+            position: relative;
+            margin-top: 2.25rem;
+            border: 1px solid var(--ink);
+            background: var(--brown);
+            overflow: hidden;
+        }
+        .hero-figure img { width: 100%; height: auto; filter: grayscale(1) contrast(1.08); display: block; }
+        .corner { position: absolute; width: 30px; height: 30px; border: 0 solid var(--ink); pointer-events: none; }
+        .corner.tl { top: -2.25rem; left: -1rem; border-top-width: 2px; border-left-width: 2px; }
+        .corner.tr { top: -2.25rem; right: -1rem; border-top-width: 2px; border-right-width: 2px; }
+
+        .eyebrow { font-family: var(--mono); font-size: 0.78rem; color: var(--rust); margin-top: 3rem; letter-spacing: 0.04em; }
+        .statement {
+            font-weight: 800;
+            font-size: clamp(2.3rem, 6.4vw, 5.6rem);
+            line-height: 0.98;
+            letter-spacing: -0.045em;
+            margin-top: 1rem;
+            max-width: 18ch;
+        }
+        .lede { max-width: 60ch; margin-top: 2rem; font-size: 1.12rem; color: #3b2a20; }
+        .lede + .lede { margin-top: 1rem; }
+
+
+        /* Hero split + polaroid stack */
+        .polaroids { width: 100%; justify-self: center; animation: polDrop 1.05s cubic-bezier(0.34, 1.3, 0.5, 1) 0.45s both; }
+        .polaroids[hidden] { display: none; }
+        .stack { position: relative; width: min(90%, 400px); aspect-ratio: 4 / 5.3; margin: 0 auto; }
+        .pol {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            padding: 14px 14px 0;
+            background: var(--paper);
+            box-shadow: 0 18px 40px rgba(59, 42, 32, 0.2);
+            transition: transform 0.55s cubic-bezier(0.3, 0.8, 0.3, 1), opacity 0.4s ease;
+            transform-origin: 50% 90%;
+        }
+        .pol img { width: 100%; aspect-ratio: 1 / 1.05; object-fit: cover; display: block; background: var(--sage); }
+        .pol figcaption { flex: 1; display: grid; place-items: center; font-size: 1.1rem; color: var(--ink); padding: 0.5rem; text-align: center; }
+        .pol[data-pos="0"] { transform: rotate(-1.5deg); z-index: 4; }
+        .pol[data-pos="1"] { transform: translate(20px, -8px) rotate(4deg); z-index: 3; }
+        .pol[data-pos="2"] { transform: translate(38px, -14px) rotate(8deg); z-index: 2; }
+        .pol[data-pos="3"] { transform: translate(52px, -18px) rotate(11deg); z-index: 1; opacity: 0; }
+        .pol-controls { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; opacity: 0; animation: fade 0.6s ease 1.5s forwards; }
+        .pol-controls button {
+            width: 46px; height: 46px; border-radius: 50%;
+            border: 0; cursor: pointer;
+            background: var(--brown); color: var(--peach);
+            font-size: 1.25rem; line-height: 1;
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+        .pol-controls button:hover { background: var(--rust); transform: scale(1.06); }
+        .pol-controls[hidden] { display: none; }
+
+        /* Ledger of projects */
+        .ledger { margin-top: 6rem; }
+        .ledger-head, .ledger-row {
+            display: grid;
+            grid-template-columns: 3.5rem 1.6fr 2.4fr 1.2fr;
+            gap: 1.5rem;
+            align-items: baseline;
+        }
+        .ledger-head {
+            font-family: var(--mono); font-size: 0.72rem; color: var(--muted);
+            padding-bottom: 0.75rem; border-bottom: 4px solid var(--ink);
+        }
+        .ledger-row { padding: 1.75rem 0; border-bottom: 1px solid #cfc2a6; }
+        .ledger-row .no { font-family: var(--mono); font-size: 0.85rem; color: var(--rust); }
+        .ledger-row h3 { font-size: clamp(1.25rem, 2.4vw, 1.9rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 800; }
+        .ledger-row p { font-size: 0.98rem; color: #3b2a20; max-width: 52ch; }
+        .ledger-row .role { font-family: var(--mono); font-size: 0.78rem; text-align: right; }
+
+        /* About + beyond */
+        .dossier { margin-top: 6rem; display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(2rem, 6vw, 5rem); }
+        .dossier h2 { font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: -0.04em; line-height: 1; padding-bottom: 0.9rem; border-bottom: 4px solid var(--ink); margin-bottom: 1.5rem; }
+        .dossier p { margin-bottom: 1rem; max-width: 60ch; }
+        .facts { list-style: none; font-family: var(--mono); font-size: 0.85rem; }
+        .facts li { padding: 0.7rem 0; border-bottom: 1px solid #cfc2a6; display: flex; justify-content: space-between; gap: 1rem; }
+        .facts li span:last-child { text-align: right; color: var(--muted); }
+
+        /* Footer */
+        footer.sign-off { margin-top: 7rem; background: var(--brown); color: var(--peach); padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3rem); }
+        .sign-off .frame { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; align-items: flex-end; }
+        .sign-off h2 { font-weight: 800; letter-spacing: -0.05em; font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: 1; color: var(--peach); }
+        .sign-off p { margin-top: 0.75rem; color: #e8dcc6; max-width: 40ch; }
+        .links { list-style: none; display: flex; gap: 1.5rem; flex-wrap: wrap; font-family: var(--mono); font-size: 0.85rem; }
+        .links a { text-decoration: none; border-bottom: 2px solid var(--rust); padding-bottom: 2px; }
+        .links a:hover { color: var(--paper); }
+        .legal { margin-top: 2.5rem; font-family: var(--mono); font-size: 0.72rem; color: #c9b9a3; }
+
+        /* ---------- ANIMATION ---------- */
+        @keyframes drop { 0% { transform: translateY(-130vh); } 100% { transform: translateY(0); } }
+        @keyframes polDrop { from { transform: translateY(-130vh) rotate(-6deg); } to { transform: none; } }
+        @keyframes fade { to { opacity: 1; } }
+        @keyframes marquee { to { transform: translateX(-50%); } }
+        @keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+
+        @media (prefers-reduced-motion: reduce) {
+            .letter { transform: none; animation: none; }
+            .intro-meta, .tagline, .scroll-cue { opacity: 1; animation: none; }
+            .scroll-cue::after, .ticker-track { animation: none; }
+            html { scroll-behavior: auto; }
+            .pol { transition: none; }
+            .polaroids { animation: none; }
+            .pol-controls { opacity: 1; animation: none; }
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 860px) {
+            .ledger-head { display: none; }
+            .ledger-row { grid-template-columns: 2.5rem 1fr; gap: 0.5rem 1rem; }
+            .ledger-row p, .ledger-row .role { grid-column: 2; text-align: left; }
+            .dossier { grid-template-columns: 1fr; }
+            .corner { display: none; }
+            .intro-stage { grid-template-columns: 1fr; text-align: center; padding-bottom: 7rem; }
+            .wordmark { align-items: center; }
+            .stack { width: min(90%, 360px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- INTRO: blue screen, name drops in from the top -->
+    <section class="intro" id="top" aria-label="Introduction">
+        <div class="intro-meta" aria-hidden="true">
+            <span>UNIVERSITY OF WATERLOO</span>
+            <span>HONOURS MATHEMATICS / FARM CO-OP</span>
+        </div>
+
+        <div class="intro-stage" id="intro-stage">
+            <div class="intro-name">
+            <h1 class="wordmark" aria-label="Kazi Zayeed">
+                <span class="word" aria-hidden="true">
+                    <span class="letter" style="--i:0">K</span><span class="letter" style="--i:1">a</span><span class="letter" style="--i:2">z</span><span class="letter" style="--i:3">i</span>
+                </span>
+                <span class="word" aria-hidden="true">
+                    <span class="letter" style="--i:4">Z</span><span class="letter" style="--i:5">a</span><span class="letter" style="--i:6">y</span><span class="letter" style="--i:7">e</span><span class="letter" style="--i:8">e</span><span class="letter" style="--i:9">d</span>
+                </span>
+            </h1>
+            <p class="tagline">Mathematics &amp; FARM student</p>
+            </div>
+
+            <div class="polaroids" id="polaroids" role="group" aria-roledescription="carousel" aria-label="Photos of Kazi" hidden>
+                <div class="stack" id="stack"></div>
+                <div class="pol-controls">
+                    <button type="button" id="pol-prev" aria-label="Previous photo">&larr;</button>
+                    <button type="button" id="pol-next" aria-label="Next photo">&rarr;</button>
+                </div>
+            </div>
+        </div>
+
+        <a class="scroll-cue" href="#index">SCROLL</a>
+
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <span>STUDENT: UNIVERSITY OF WATERLOO / HONOURS MATHEMATICS &amp; FARM</span>
+                <span>INTEREST: QUANTITATIVE FINANCE / RISK MANAGEMENT</span>
+                <span>PROJECTS: MARKET RESEARCH / PYTHON SIMULATION</span>
+                <span>STUDENT: UNIVERSITY OF WATERLOO / HONOURS MATHEMATICS &amp; FARM</span>
+                <span>INTEREST: QUANTITATIVE FINANCE / RISK MANAGEMENT</span>
+                <span>PROJECTS: MARKET RESEARCH / PYTHON SIMULATION</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN -->
+    <div class="page" id="index">
+        <div class="frame">
+            <header class="masthead">
+                <a class="brand" href="index.html">
+                    <span class="seal" aria-hidden="true">K.Z</span>
+                    <span>
+                        <span class="brand-name">Kazi Zayeed</span>
+                        <span class="brand-sub">Waterloo Honours Mathematics &amp; FARM</span>
+                    </span>
+                </a>
+                <nav aria-label="Main">
+                    <ul>
+                        <li><a href="index.html" aria-current="page">01 Home</a></li>
+                        <li><a href="experience.html">02 Experience</a></li>
+                        <li><a href="about.html">03 Philosophy</a></li>
+                        <li><a href="contact.html">04 Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="status-line" aria-hidden="true">
+                <div class="ticker-track">
+                    <span>STUDY: HONOURS MATHEMATICS / FINANCIAL ANALYSIS AND RISK MANAGEMENT (FARM) CO-OP // </span>
+                    <span>INTEREST: FINANCE, CONSULTING &amp; ASKING WHY // </span>
+                    <span>I LOVE POKER // My wallet does not...// </span>
+                    <span>COFFEE: Caffine is how to get through midterms// </span>
+                    <span>TRY. FAIL. LEARN. BACK TO FIRST PRINCIPLES. TRY AGAIN. // </span>
+                    <span>STUDY: HONOURS MATHEMATICS / FINANCIAL ANALYSIS AND RISK MANAGEMENT (FARM) CO-OP // </span>
+                    <span>INTEREST: FINANCE, CONSULTING &amp; ASKING WHY // </span>
+                    <span>I LOVE POKER // My wallet does not... // </span>
+                    <span>COFFEE: Caffine is how to get through midterms// </span>
+                    <span>TRY. FAIL. LEARN. BACK TO FIRST PRINCIPLES. TRY AGAIN. // </span>
+                </div>
+            </div>
+
+            <figure class="hero-figure">
+                <img src="assets/images/farm.jpg" alt="Portrait of Kazi Zayeed">
+                <span class="corner tl"></span><span class="corner tr"></span>
+            </figure>
+
+            <p class="eyebrow">ABOUT // KAZI ZAYEED</p>
+            <h2 class="statement">“Why?” is my favorite follow-up question.</h2>
+            <p class="lede">I'm Zayeed, an Honours Mathematics and Financial Analysis and Risk Management (FARM) student at Waterloo. I ask why a lot: why does this work, why is it set up this way, and who decided that was a good idea? I chose this path because math and FARM give me more tools in my arsenal to chase those answers and test what I think I know.</p>
+            <p class="lede">Finance and consulting appeal to me because they're full of interesting whys: why a decision was made, why a model works, and what happens if you try another approach. They also leave room to fail, which is convenient because I'm already pretty good at that. I just try to make the next attempt smarter.</p>
+
+            <section class="ledger" aria-labelledby="ledger-title">
+                <div class="ledger-head" id="ledger-title">
+                    <span>No.</span><span>Project</span><span>What it is</span><span style="text-align:right">Role</span>
+                </div>
+
+                <article class="ledger-row">
+                    <span class="no">01</span>
+                    <h3>180 Degrees Consulting Waterloo</h3>
+                    <p>Researches local social enterprises and potential pro-bono consulting engagements, and prepares proposals and pitch materials for non-profits, charities, and social enterprises.</p>
+                    <span class="role">Business Development Analyst</span>
+                </article>
+
+                <article class="ledger-row">
+                    <span class="no">02</span>
+                    <h3>UW Bangladeshi Students' Association</h3>
+                    <p>Helps re-establish the association through event strategy, venue logistics, budget planning, cultural showcases, night markets, and mentorship panels.</p>
+                    <span class="role">Director of Events &amp; Co-Founder (Refounding)</span>
+                </article>
+
+                <article class="ledger-row">
+                    <span class="no">03</span>
+                    <h3>Bloomberg Global Trading Challenge</h3>
+                    <p>Researched markets and macro conditions, position sizing, and volatility risk for a notional portfolio benchmarked against the Bloomberg World Large, Mid &amp; Small Cap Price Return Index.</p>
+                    <span class="role">Team Lead, Risk &amp; Research</span>
+                </article>
+
+                <article class="ledger-row">
+                    <span class="no">04</span>
+                    <h3>Monte Carlo Free Throw Simulator</h3>
+                    <p>A Python and Matplotlib simulation of configurable free-throw trials that calculates expected success rates, frequency distributions, and extreme outcomes.</p>
+                    <span class="role">Developer</span>
+                </article>
+
+                <article class="ledger-row">
+                    <span class="no">05</span>
+                    <h3>BCG Launch</h3>
+                    <p>Selected for a professional development program with masterclasses in hypothesis-driven problem-solving, structured case math, and market-entry strategies, plus exposure to consulting engagements and the Associate role.</p>
+                    <span class="role">Program participant</span>
+                </article>
+            </section>
+
+        </div>
+    </div>
+
+    <footer class="sign-off" id="contact">
+        <div class="frame">
+            <div>
+                <h2>Let's connect</h2>
+                <p>Always happy to chat about projects or ideas.</p>
+            </div>
+            <ul class="links">
+                <li><a href="mailto:kzayeed@uwaterloo.ca">Email</a></li>
+                <li><a href="https://www.linkedin.com/in/kazi-zayeed" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://x.com/KaziZayeed" target="_blank" rel="noopener">X</a></li>
+                <li><a href="https://www.instagram.com/lezayeed/" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://github.com/kazizayeed" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+        </div>
+        <div class="frame"><p class="legal">© 2026 Kazi Zayeed</p></div>
+    </footer>
+
+
+    <script>
+        // Add your photos here (put the files in assets/images/). Missing files are skipped automatically.
+        var PHOTOS = [
+            { src: 'assets/images/tung.JPG', alt: 'Kazi Zayeed', caption: 'HI!!' },
+            { src: 'assets/images/true.gif', alt: 'Kazi Zayeed', caption: 'Math 135 is beautiful' },
+            { src: 'assets/images/yeah.PNG', alt: 'Kazi Zayeed', caption: 'Larp Larp' }
+        ];
+
+        (function () {
+            var split = document.getElementById('intro-stage');
+            var wrap = document.getElementById('polaroids');
+            var stack = document.getElementById('stack');
+            var controls = wrap.querySelector('.pol-controls');
+
+            function check(p) {
+                return new Promise(function (resolve) {
+                    var img = new Image();
+                    img.onload = function () { resolve(p); };
+                    img.onerror = function () { resolve(null); };
+                    img.src = p.src;
+                });
+            }
+
+            Promise.all(PHOTOS.map(check)).then(function (list) {
+                var photos = list.filter(Boolean);
+                if (!photos.length) { split.classList.add('no-photos'); return; }
+
+                var cards = photos.map(function (p) {
+                    var fig = document.createElement('figure');
+                    fig.className = 'pol';
+                    var img = document.createElement('img');
+                    img.src = p.src; img.alt = p.alt || ''; img.loading = 'lazy';
+                    var cap = document.createElement('figcaption');
+                    cap.textContent = p.caption || '';
+                    fig.appendChild(img); fig.appendChild(cap);
+                    stack.appendChild(fig);
+                    return fig;
+                });
+
+                var n = cards.length, cur = 0;
+                function render() {
+                    cards.forEach(function (c, i) {
+                        var off = (i - cur + n) % n;
+                        c.dataset.pos = Math.min(off, 3);
+                        c.setAttribute('aria-hidden', off === 0 ? 'false' : 'true');
+                    });
+                }
+                render();
+                wrap.hidden = false;
+
+                if (n < 2) { controls.hidden = true; return; }
+                document.getElementById('pol-next').addEventListener('click', function () { cur = (cur + 1) % n; render(); });
+                document.getElementById('pol-prev').addEventListener('click', function () { cur = (cur - 1 + n) % n; render(); });
+            });
+        })();
+    </script>
+</body>
+</html>
